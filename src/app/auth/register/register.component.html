@@ -1,0 +1,21 @@
+<div class="register-wrapper">
+    <h1 class="h1 mb-3 fw-normal text-center">Register</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-floating my-2">
+            <input type="text" formControlName="name" id="name" class="form-control" />
+            <label for="name">Name</label>
+        </div>
+        <div class="form-floating my-2">
+            <input type="email" formControlName="email" id="email" class="form-control" />
+            <label for="email">Email address</label>
+        </div>
+        <div class="form-floating my-2">
+            <input type="password" formControlName="password" id="password" class="form-control" />
+            <label for="password">Password</label>
+        </div>
+        <button class="w-100 custom-button my-2" type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+    <p class="login-switch my-2" (click)="switchToLogin()">
+        Already a member? <span class="hyperlinks_small cursor-pointer">Login Now</span>
+    </p>
+</div>

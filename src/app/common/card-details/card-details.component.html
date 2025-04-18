@@ -1,0 +1,31 @@
+<div class="card my-5 card-wrapper">
+    <div class="card-header">
+        {{ cardDetails.title }}
+    </div>
+    <ul *ngIf="cardDetails.details" class="card-body">
+        <li *ngFor="let info of cardDetails.details" class="mb-2">
+            <div class="key">{{ info.key }}</div>
+            <div class="value">{{ info.value }}</div>
+        </li>
+    </ul>
+    <ul *ngIf="cardDetails.ammenties" class="card-body">
+        <li *ngFor="let list of cardDetails.ammenties" class="mb-2">
+            <div class="key">{{ list.key }}</div>
+            <div class="value">{{ list.value }}</div>
+            <app-star-rating [rating]="list.value"></app-star-rating>
+        </li>
+    </ul>
+    <div *ngIf="cardDetails.description" class="card-body">
+        <strong>Description: </strong>
+        <p [class.clamped]="!showFullDescription">
+            {{ cardDetails.description }}
+        </p>
+        <a href="javascript:void(0)" (click)="toggleDescription()">
+            {{ showFullDescription ? 'Read less' : 'Read more' }}
+        </a>
+    </div>
+    <button *ngIf="cardDetails.action_cta" class="custom-button m-3">
+        <span>Contact Owner</span>
+    </button>
+    <!-- <app-star-rating [rating]="4"></app-star-rating> -->
+</div>

@@ -1,0 +1,41 @@
+<div class="card shadow-sm rounded-4 p-3">
+    <h5 class="mb-3">User Reviews & Ratings</h5>
+  
+    <!-- Add New Comment -->
+    <div class="mb-4 border p-3 rounded">
+      <div class="mb-2">
+        <input class="form-control" placeholder="Your name" [(ngModel)]="newComment.name" />
+      </div>
+      <div class="mb-2">
+        <textarea class="form-control" rows="3" placeholder="Write your comment" [(ngModel)]="newComment.text"></textarea>
+      </div>
+      <div class="mb-2">
+        <span class="me-2">Your Rating:</span>
+        <ng-container *ngFor="let star of [1,2,3,4,5]">
+          <i class="bi" 
+             [ngClass]="newComment.rating >= star ? 'bi-star-fill text-warning' : 'bi-star'"
+             style="cursor: pointer;"
+             (click)="setRating(star)">
+          </i>
+        </ng-container>
+      </div>
+      <button class="btn btn-primary mt-2" (click)="addComment()">Submit</button>
+    </div>
+  
+    <!-- Comment List -->
+    <div *ngFor="let comment of comments" class="border-bottom pb-2 mb-3">
+      <div class="d-flex justify-content-between">
+        <strong>{{ comment.name }}</strong>
+        <small class="text-muted">{{ comment.date | date:'mediumDate' }}</small>
+      </div>
+      <div class="text-warning mb-1">
+        <ng-container *ngFor="let star of [1,2,3,4,5]">
+          <i class="bi" 
+             [ngClass]="comment.rating >= star ? 'bi-star-fill' : 'bi-star'">
+          </i>
+        </ng-container>
+      </div>
+      <p class="mb-0">{{ comment.text }}</p>
+    </div>
+  </div>
+  

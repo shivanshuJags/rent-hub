@@ -1,0 +1,7 @@
+<div class="form-signin w-100 m-auto">
+   @if (!isRegistered) {
+   <app-register (isRegisterSuccess)="onRegisterSuccess(true)"></app-register>
+   } @else {
+   <app-login (isRegisterSuccess)="onRegisterSuccess(false)"></app-login>
+   }
+</div>

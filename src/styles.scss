@@ -1,1 +1,107 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@use 'bootstrap/scss/bootstrap';
+
+:root {
+    --primary-color: #005ca8;
+    --secondary-color: #0078db;
+    --white-color: #ffffff;
+    /* Grid System */
+    --grid-columns: 4;
+    --grid-gutter-width: 16px;
+    --container-margin: 20px;
+    --grid-formula: (((100vw - var(--container-margin) - var(--container-margin)) - (var(--grid-gutter-width) * (var(--grid-columns) - 1))) / var(--grid-columns));
+}
+
+/* Grid System */
+@media screen and (width >=768px) {
+    :root {
+        --grid-columns: 8;
+        --grid-gutter-width: 24px;
+    }
+}
+
+@media screen and (width >=1024px) {
+    :root {
+        --grid-columns: 12;
+        --grid-gutter-width: 24px;
+        --container-margin: 56px;
+    }
+}
+
+/* Grid system */
+.g-container {
+    width: 100%;
+    padding-inline: var(--container-margin);
+}
+
+.g-row {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--grid-gutter-width);
+}
+
+[class^='g-lg-'],
+[class^='g-sm'],
+[class^='g-md'] {
+    width: 100%;
+    /* Default to full width */
+}
+
+img {
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+label {
+    margin-bottom: 12px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-danger {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.hyperlinks_small {
+    font-weight: 600;
+    color: #0078db;
+    display: block;
+    text-align: left;
+    vertical-align: middle;
+
+    &:hover {
+        color: #005ca8;
+        cursor: pointer;
+    }
+}
+
+.btn {
+    padding: 8px 16px;
+    &:hover {
+        background-color: #0078db;
+    }
+}
+.custom-button {
+    width: max-content;
+    background-color: #0078db;
+    opacity: 1;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    line-height: 24px;
+    font-size: 16px;
+    min-width: 120px;
+    border-radius: 5px;
+    align-content: center;
+    outline: none;
+}

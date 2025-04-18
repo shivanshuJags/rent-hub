@@ -1,0 +1,27 @@
+.rating {
+    display: flex;
+    align-items: center;
+  
+    .rating-number {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+  
+    .star {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: 2px;
+    }
+  
+    .filled {
+      background-image: url('../../../assets/icons/_star_fill.svg');
+    }
+  
+    .unfilled {
+      background-image: url('../../../assets/icons/_star.svg');
+    }
+  }
+  

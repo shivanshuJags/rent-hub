@@ -1,0 +1,19 @@
+<div class="gallery-container">
+    <div class="main-image">
+        <img [src]="images[0]" alt="Main Image" />
+    </div>
+    <div class="thumbnail-row">
+        <ng-container *ngFor="let img of images.slice(1, 4); let i = index">
+            <div class="thumbnail">
+                <img [src]="img" alt="Thumbnail {{ i + 1 }}" />
+            </div>
+        </ng-container>
+
+        <div class="thumbnail overlay-container" *ngIf="images.length > 4">
+            <img [src]="images[4]" alt="More Photos" />
+            <div class="overlay">
+                +{{ images.length - 4 }} Photos
+            </div>
+        </div>
+    </div>
+</div>

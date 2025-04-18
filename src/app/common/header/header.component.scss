@@ -1,0 +1,31 @@
+nav {
+    background-color: var(--primary-color);
+    position: relative;
+
+    .header-wrapper {
+        padding: 0;
+
+        a {
+            color: var(--white-color);
+        }
+
+        .profile-container {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+            }
+
+            a {
+                color: black;
+            }
+        }
+
+        .profile-menu {
+            position: absolute;
+            right: 0;
+        }
+    }
+}

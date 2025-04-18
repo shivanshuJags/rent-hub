@@ -1,0 +1,9 @@
+<div class="rating">
+    <span class="rating-number">{{ rating }}</span>
+    <ng-container *ngFor="let star of stars">
+        <i class="star" [ngClass]="{
+        'filled': star <= rating,
+        'unfilled': star > rating
+      }"></i>
+    </ng-container>
+</div>

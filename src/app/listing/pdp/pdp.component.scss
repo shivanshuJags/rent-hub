@@ -1,0 +1,18 @@
+.pdp-wrapper {
+    position: relative;
+    .left-container {
+        width: calc(100% - 340px);
+        height: auto;
+        display: block;
+        float: left;
+    }
+
+    .right-container {
+        width: 302px;
+        display: block;
+        float: right;
+        position: sticky;
+        top: 0;
+        max-height: 150px;
+    }
+}

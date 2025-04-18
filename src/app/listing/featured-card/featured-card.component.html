@@ -1,0 +1,18 @@
+<div class="card featured-card" *ngIf="featuredListing" (click)="goToDetails(featuredListing.id)"
+  style="cursor: pointer;">
+  <img [src]="featuredListing.feature_image" class="card-img-top" [alt]="featuredListing.first_name">
+
+  <div class="card-body">
+    <h5 class="card-title">{{ featuredListing.first_name }}</h5>
+    <p class="card-text">{{ featuredListing.description }}</p>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Location: {{ featuredListing.address }}</li>
+  </ul>
+
+  <div class="card-body bottom-wrapper">
+    <button class="btn btn-outline-primary">View Details</button>
+    <button class="custom-button" (click)="markAsFavourite($event)">Mark as Favourite</button>
+  </div>
+</div>

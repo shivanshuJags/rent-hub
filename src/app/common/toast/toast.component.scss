@@ -1,0 +1,30 @@
+.toast-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 24px;
+    background-color: rgb(253 243 229/1);
+    border: 1px solid rgb(232 231 234/1);
+    border-radius: 12px;
+    justify-content: space-between;
+
+    .information {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        .icon-wrapper {
+            border: 1px solid rgb(232 231 234/1);
+            border-radius: 50%;
+            background-color: white;
+            padding: 12px;
+        }
+
+        .description {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+            white-space: nowrap;
+        }
+    }
+}
